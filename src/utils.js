@@ -7,14 +7,14 @@ function isPalindrome(word) {
     if (!/^[A-Za-z]+$/.test(word)) {
       throw new Error("Input must only contain alphabetic characters.");
     }
-    if (word.length === 0) {
-      return false;  // Return false for an empty string
-    }
-  
-    const cleanedWord = word.toLowerCase();
-    const reversedWord = cleanedWord.split('').reverse().join('');
-    return cleanedWord === reversedWord;
-  }
+
+  if (word.length === 0) return false; // Explicitly handle empty strings
+
+  const normalizedWord = word.toLowerCase();
+  const reversedWord = normalizedWord.split('').reverse().join('');
+  return normalizedWord === reversedWord;
+}
+
   
   export default isPalindrome;
   
